@@ -10,3 +10,8 @@ const blackListTokenSchema = new mongoose.Schema({
 const tokenBlackListModel = mongoose.model("blacklist", blackListTokenSchema)
 
 export default tokenBlackListModel
+
+
+
+
+//when user logout, token store in blacklist
