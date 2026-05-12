@@ -10,25 +10,44 @@ export const useAuth = ()=>{
 
     const handleLogin = async ({ email, password })=>{
         setloading(true)
-        const data = await login ({email, password})
+       try{
+         const data = await login ({email, password})
         setuser(data.user)
-        setloading(false)
-    }
+       }catch(err){
+
+       }finally{
+         setloading(false)
+       }
+    };
+
+
 
     const handleRegister = async ({username, email, password})=>{
         setloading(true)
+        try{
         const data = await register ({username, email, password})
         setuser(data.user)
-        setloading(false)
-    }
+        }catch(err){
+
+        }finally{
+             setloading(false)
+        }
+    };
+
+    
 
     const haldeLogout = async ()=>{
         setloading(true)
-        const data = await logout()
+       try{
+         const data = await logout()
         setuser(null)
+       }catch(err){
+
+       }finally{
         setloading(false)
+       } 
     }
 
-    return (user, loading, handleLogin, handleRegister, haldeLogout)
+    return {user, loading, handleLogin, handleRegister, haldeLogout}
 
 }
