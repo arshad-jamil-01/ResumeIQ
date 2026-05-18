@@ -33,5 +33,4 @@ async function authUser(req, res, next){
 
 };
 
-
 export default authUser;

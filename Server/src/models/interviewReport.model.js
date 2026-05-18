@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 
 //======== technicalQuestion ==========
-const technoicalQuestionSchema = new mongoose.Schema({
+const technicalQuestionSchema = new mongoose.Schema({
 question:{
     type:String,
     required:[true, "Technical question is required"]
@@ -85,12 +85,14 @@ const InterviewSchema = new mongoose.Schema({
         min:0,
         max:100,
     },
-    technicalQuestion:[technoicalQuestionSchema],
-    behavioralQuestionSchema:[behavioralQuestionSchema],
-    skillGapsSchema:[skillGapsSchema],
-    preprationPlanSchema:[preprationPlanSchema]
-    
-
+    technicalQuestion:[technicalQuestionSchema],
+    behavioralQuestion:[behavioralQuestionSchema],
+    skillGaps:[skillGapsSchema],
+    preparationPlan:[preparationPlanSchema],
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"users"
+    }
 },{
     timestamps:true
 })
