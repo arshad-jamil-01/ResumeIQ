@@ -10,9 +10,12 @@ app.use(cors({
     credentials:true
 }))
 
+//  need all the routes here
 import authRouter from "./routes/auth.routes.js";
+import interviewRouter  from "./routes/interview.routes.js";
 
 app.use("/api/auth", authRouter)    //prefix
+app.use("/api/interview",interviewRouter)
 
 
 

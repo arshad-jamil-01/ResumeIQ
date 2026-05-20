@@ -7,7 +7,7 @@ const interviewRouter = express.Router();
 
 
 
-interviewRouter.post("/", authUser, upload.single("resume"), interviewController.generateInterviewReportController)
+interviewRouter.post("/", authUser, upload.single("resume"), interviewController)
 
 
 export default interviewRouter;

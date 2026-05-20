@@ -9,11 +9,13 @@ question:{
 },
 intention:{
     type:String,
-    required:[true, "intention is required"]
+    //required:[true, "intention is required"]
+    default:"Not provided"
 },
 answer:{
     type:String,
-    required:[true, "answer is required"]
+    //required:[true, "answer is required"]
+     default:"Not provided"
 }
 },{_id:false});
 
@@ -26,13 +28,15 @@ question:{
 },
 intention:{
     type:String,
-    required:[true, "intention is required"]
+    //required:[true, "intention is required"]
+     default:"Not provided"
 },
 answer:{
     type:String,
-    required:[true, "answer is required"]
+    //required:[true, "answer is required"]
+     default:"Not provided"
 }
-},{_id:true});
+},{_id:false});
 
 
 //====== skilss gap schema ======
@@ -52,7 +56,7 @@ answer:{
 
 
  // ==== prepration plan schema =====
- const preprationPlanSchema = new mongoose.Schema({
+ const preparationPlanSchema = new mongoose.Schema({
     day:{
         type:Number,
         required:[true, "day is required"]
@@ -80,7 +84,7 @@ const InterviewSchema = new mongoose.Schema({
     selfDescription:{
         type:String
     },
-    matcheScore:{
+    matchScore:{
         type:Number,
         min:0,
         max:100,
